@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    background-color: #064052;
+    height: auto;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+  }
+  
+
+
+.navbar-brand {
+  width: auto;
+  height: 70px;
+  border: 2px solid rgb(255, 254, 254);
+  border-radius: 70%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+ color: rgb(17, 13, 11);
+ background-color: white;
+ font-weight: bolder;
+
+}
+
+h1{
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.containerGaleria {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-evenly;
+    transition: all 300ms;
+}
+
+
+
+h2 {
+    font-size: 15px;
+    color: rgb(17, 13, 11);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.estilo{
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  overflow: hidden;
+}
+
+.imagenSilla { 
+  height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.boton{ 
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#contenedorSillas{
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.imagenSilla{
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.boton{
+  display: inline-block;
+  border-radius: 10px;
+  background-color: darkslategray;
+  color: black;
+}
+
+
+.boton:hover {
+  background-color: blue;
+  color: white;
+} 
+
+
+.footer{
+  text-align: center;
+  background-color: #064052;
+
+  color: antiquewhite;
+  font-weight: 25px;
+}
+
+.contenedorAgregadas{
+  display: grid;
+gap: 1rem;
+grid-template-columns: repeat(4, 1fr);
+}

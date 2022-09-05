@@ -1,3 +1,5 @@
+
+
 /*
 Variables
 */
@@ -69,7 +71,7 @@ const sillas = [{
 ]
 
 const contenedorSillas = document.querySelector("#contenedorSillas");
-const contenedorAgregadas = document.querySelector(".contenedorAgregadas");
+const contenedorAgregadas = document.querySelector("#contenedorAgregadas");
 const carrito = [];
 
 /*
@@ -100,6 +102,8 @@ function mostrarSillas() {
 
             const tituloSilla = document.createElement("h2");
             tituloSilla.textContent = silla.nombre;
+const parrafoSilla = document.createElement("h3");
+parrafoSilla.textContent = silla.precio;
 
             const btnFavorito = document.createElement("button");
             btnFavorito.textContent = "Agregar al carrito";
@@ -118,7 +122,9 @@ function mostrarSillas() {
             */
             divSilla.appendChild(imagenSilla);
             divSilla.appendChild(tituloSilla);
+            divSilla.appendChild(parrafoSilla);
             divSilla.appendChild(btnFavorito);
+          
 
             /*
             Dom
@@ -141,9 +147,9 @@ function agregarCarrito(id) {
 }
 
 function mostrarSillasAgregadas(agregadas) {
-
+    contenedorAgregadas.innerHTML = "";
     agregadas.forEach(function (silla) {
-            contenedorAgregadas.innerHTML = "";
+          
         
         const divSilla = document.createElement("div");
             divSilla.classList.add("estilo");
@@ -157,8 +163,10 @@ function mostrarSillasAgregadas(agregadas) {
             const tituloSilla = document.createElement("h2");
             tituloSilla.textContent = silla.nombre;
 
-        
+            const parrafoSilla = document.createElement("h3");
+            parrafoSilla.textContent = silla.precio;
             divSilla.appendChild(imagenSilla);
+            divSilla.appendChild(parrafoSilla);
             divSilla.appendChild(tituloSilla);
        
 
@@ -189,3 +197,32 @@ let ingresar1 = prompt("ingresa el color");
 
 const resultado1 = sillas.filter((el) => el.color.includes(ingresar1));
 console.log("De ese color nos quedan : " , resultado1);
+
+
+/* evento de teclado*/
+window.addEventListener("keydown" , function(e){
+
+
+    if (e.key == "ArrowUp"){
+        this.document.body.style.background = "dimgrey";
+    }
+    else if(e.key == "ArrowDown"){
+        this.document.body.style.background = "rgb(151, 150, 148)";
+    }
+});
+
+
+
+
+
+let form =  document.getElementById("form");
+
+form.addEventListener("submit" , function(e){
+e.preventDefault();
+
+let nombre = document.getElementById("nombre");
+let telefono = document.getElementById("telefono");
+
+console.log ("El nombre del usuario es " , nombre.value);
+console.log ("El telefono del usuario es " , telefono.value); 
+})

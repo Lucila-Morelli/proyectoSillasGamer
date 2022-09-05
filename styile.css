@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
@@ -126,4 +126,28 @@ h2 {
   display: grid;
 gap: 1rem;
 grid-template-columns: repeat(4, 1fr);
+
+}
+
+h3{
+  color: black;
+  font-size: 12px;
+}
+
+
+.imagenPortada{
+  width: 100%;
+}
+
+.parrafo{
+
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+.form{
+
+  display: flexbox;
+  flex-direction: column;
 }

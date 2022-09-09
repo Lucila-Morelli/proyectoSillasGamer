@@ -55,7 +55,7 @@ const sillas = [{
         id: 7,
         nombre: "Silla Gamer Daewoo Shooter Green",
         img: "./img/sillaverde2.png",
-        precio: 614000,
+        precio: 61400,
         marca: "Daewoo",
         color: "verde",
     },
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mostrarSillas();
 
-    suma_productos();
+
 })
 
 
@@ -177,6 +177,9 @@ function mostrarSillasAgregadas(agregadas) {
             btn_eliminar.textContent = "borrar";
             btn_eliminar.classList.add("borrar");
 
+
+            suma_productos()
+
             divSilla.appendChild(imagenSilla);
             divSilla.appendChild(parrafoSilla);
             divSilla.appendChild(tituloSilla);
@@ -188,18 +191,17 @@ function mostrarSillasAgregadas(agregadas) {
     )
 }
 
-
 function suma_productos() {
-
-    let venta_total = carrito.reduce(calcular_total, 0);
-    
-    return (venta_total);
+let venta_total = carrito.reduce(calcular_total , 0 );
+    let total = document.getElementById("totalCarrito");
+    console.log(total);
+    total.innerHTML = `El total a pagar es : ${venta_total}`;
     
     }
     
     function calcular_total(acu, producto) {
     
-    acu = acu + parseInt(producto.precio);
+    acu = acu += parseInt(producto.precio);
     
     return acu
     

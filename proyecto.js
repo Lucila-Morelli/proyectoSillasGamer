@@ -81,6 +81,8 @@ Eventos
 document.addEventListener("DOMContentLoaded", function () {
 
     mostrarSillas();
+
+    suma_productos();
 })
 
 
@@ -133,7 +135,10 @@ parrafoSilla.textContent = silla.precio;
         }
 
     )
+
 }
+
+
 /*Find para agregar al carrito
  */
 function agregarCarrito(id) {
@@ -163,12 +168,19 @@ function mostrarSillasAgregadas(agregadas) {
             const tituloSilla = document.createElement("h2");
             tituloSilla.textContent = silla.nombre;
 
+
             const parrafoSilla = document.createElement("h3");
             parrafoSilla.textContent = silla.precio;
+
+
+            const btn_eliminar = document.createElement("button");
+            btn_eliminar.textContent = "borrar";
+            btn_eliminar.classList.add("borrar");
+
             divSilla.appendChild(imagenSilla);
             divSilla.appendChild(parrafoSilla);
             divSilla.appendChild(tituloSilla);
-       
+       divSilla.appendChild(btn_eliminar);
 
             contenedorAgregadas.appendChild(divSilla);
         }
@@ -177,7 +189,29 @@ function mostrarSillasAgregadas(agregadas) {
 }
 
 
-/* FILTER */
+function suma_productos() {
+
+    let venta_total = carrito.reduce(calcular_total, 0);
+    
+    return (venta_total);
+    
+    }
+    
+    function calcular_total(acu, producto) {
+    
+    acu = acu + parseInt(producto.precio);
+    
+    return acu
+    
+    }
+
+
+
+
+
+
+
+    /* FILTER */
 
 const sillasFiltradas = sillas.filter(function(silla){
     return silla.precio < 56000;
@@ -226,3 +260,4 @@ let telefono = document.getElementById("telefono");
 console.log ("El nombre del usuario es " , nombre.value);
 console.log ("El telefono del usuario es " , telefono.value); 
 })
+

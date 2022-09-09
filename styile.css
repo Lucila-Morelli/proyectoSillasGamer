@@ -144,10 +144,3 @@ h3{
   font-weight: bold;
   font-size: 22px;
 }
-
-
-.form{
-
-  display: flexbox;
-  flex-direction: column;
-}

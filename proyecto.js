@@ -116,6 +116,8 @@ parrafoSilla.textContent = silla.precio;
             */
             btnFavorito.onclick = function () {
                 agregarCarrito(silla.id);
+                let arreglo_JSON = JSON.stringify(carrito);
+localStorage.setItem("carrito" , arreglo_JSON);
 
             }
 
@@ -152,9 +154,6 @@ function agregarCarrito(id) {
 }
 
 
-//localStore
-let arreglo_JSON = JSON.stringify(carrito);
-localStorage.setItem("carrito" , arreglo_JSON);
 
 
 

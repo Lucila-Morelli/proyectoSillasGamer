@@ -151,6 +151,13 @@ function agregarCarrito(id) {
     mostrarSillasAgregadas(carrito);
 }
 
+
+//localStore
+let arreglo_JSON = JSON.stringify(carrito);
+localStorage.setItem("carrito" , arreglo_JSON);
+
+
+
 function mostrarSillasAgregadas(agregadas) {
     contenedorAgregadas.innerHTML = "";
     agregadas.forEach(function (silla) {
@@ -191,6 +198,10 @@ function mostrarSillasAgregadas(agregadas) {
     )
 }
 
+
+
+
+
 function suma_productos() {
 let venta_total = carrito.reduce(calcular_total , 0 );
     let total = document.getElementById("totalCarrito");
@@ -206,9 +217,6 @@ let venta_total = carrito.reduce(calcular_total , 0 );
     return acu
     
     }
-
-
-
 
 
 

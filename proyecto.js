@@ -121,6 +121,8 @@ localStorage.setItem("carrito" , arreglo_JSON);
 
             }
 
+            console.log(localStorage.length);
+
             /*
             Elementos al card 
             */
@@ -200,7 +202,6 @@ function mostrarSillasAgregadas(agregadas) {
 
 
 
-
 function suma_productos() {
 let venta_total = carrito.reduce(calcular_total , 0 );
     let total = document.getElementById("totalCarrito");
@@ -270,3 +271,22 @@ console.log ("El nombre del usuario es " , nombre.value);
 console.log ("El telefono del usuario es " , telefono.value); 
 })
 
+
+
+document.addEventListener("keyup", e=>{
+
+    //UNA CONDICIONAL PARA PODER MOSTRAR LO BUSCADO EN EL INPUT
+
+    if (e.target.matches("#buscador")){
+  
+        document.querySelectorAll(".marcas").forEach(marca =>{
+  
+            marca.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+              ?marca.classList.remove("filtro")
+              :marca.classList.add("filtro")
+        })
+  
+    } 
+  
+  
+  })

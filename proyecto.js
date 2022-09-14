@@ -72,7 +72,8 @@ const sillas = [{
 
 const contenedorSillas = document.querySelector("#contenedorSillas");
 const contenedorAgregadas = document.querySelector("#contenedorAgregadas");
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carrito"))|| [];
+console.log(carrito);
 
 /*
 
@@ -80,8 +81,8 @@ Eventos
 */
 document.addEventListener("DOMContentLoaded", function () {
 
+    mostrarSillasAgregadas(carrito);
     mostrarSillas();
-
 
 })
 
@@ -194,12 +195,29 @@ function mostrarSillasAgregadas(agregadas) {
        divSilla.appendChild(btn_eliminar);
 
             contenedorAgregadas.appendChild(divSilla);
+
+
+            let botones_borrar = document.getElementsByClassName("borrar");
+            for(let btn of botones_borrar){
+                btn.addEventListener("click" , eliminar)
+            }
         }
 
     )
 }
 
-
+function eliminar (e){
+    let target = e.target.parentNode;
+    let nombres = e.target.parentNode.getElementsByTagName("h2");
+    target.remove()
+    for(let nombre of nombres){
+        carrito = carrito.filter((e) => e.nombre !== nombre.innerText)
+        suma_productos();
+        return carrito;
+     
+}
+mostrarSillasAgregadas(carrito);
+}
 
 
 function suma_productos() {
@@ -272,21 +290,3 @@ console.log ("El telefono del usuario es " , telefono.value);
 })
 
 
-
-document.addEventListener("keyup", e=>{
-
-    //UNA CONDICIONAL PARA PODER MOSTRAR LO BUSCADO EN EL INPUT
-
-    if (e.target.matches("#buscador")){
-  
-        document.querySelectorAll(".marcas").forEach(marca =>{
-  
-            marca.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-              ?marca.classList.remove("filtro")
-              :marca.classList.add("filtro")
-        })
-  
-    } 
-  
-  
-  })

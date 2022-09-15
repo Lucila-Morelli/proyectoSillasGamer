@@ -195,7 +195,7 @@ function mostrarSillasAgregadas(agregadas) {
        divSilla.appendChild(btn_eliminar);
 
             contenedorAgregadas.appendChild(divSilla);
-
+/*boton borrar*/
 
             let botones_borrar = document.getElementsByClassName("borrar");
             for(let btn of botones_borrar){

@@ -72,16 +72,16 @@ const sillas = [{
 
 const contenedorSillas = document.querySelector("#contenedorSillas");
 const contenedorAgregadas = document.querySelector("#contenedorAgregadas");
-const carrito = JSON.parse(localStorage.getItem("carrito"))|| [];
+
+let carrito = [];
 console.log(carrito);
 
 /*
 
 Eventos
 */
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
-    mostrarSillasAgregadas(carrito);
     mostrarSillas();
 
 })
@@ -217,6 +217,8 @@ function eliminar (e){
      
 }
 mostrarSillasAgregadas(carrito);
+
+const carrito = JSON.parse(localStorage.getItem("carrito"))|| [];
 }
 
 

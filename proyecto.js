@@ -72,7 +72,7 @@ const sillas = [{
 
 const contenedorSillas = document.querySelector("#contenedorSillas");
 const contenedorAgregadas = document.querySelector("#contenedorAgregadas");
-
+/*const carrito = JSON.parse(localStorage.getItem("carrito"))|| [];*/
 let carrito = [];
 console.log(carrito);
 
@@ -119,6 +119,7 @@ parrafoSilla.textContent = silla.precio;
                 agregarCarrito(silla.id);
                 let arreglo_JSON = JSON.stringify(carrito);
 localStorage.setItem("carrito" , arreglo_JSON);
+JSON.parse(localStorage.getItem("carrito"))|| [];
 
             }
 
@@ -217,8 +218,6 @@ function eliminar (e){
      
 }
 mostrarSillasAgregadas(carrito);
-
-const carrito = JSON.parse(localStorage.getItem("carrito"))|| [];
 }
 
 
@@ -241,7 +240,7 @@ let venta_total = carrito.reduce(calcular_total , 0 );
 
 
 
-    /* FILTER */
+    /* FILTER 
 
 const sillasFiltradas = sillas.filter(function(silla){
     return silla.precio < 56000;
@@ -262,7 +261,7 @@ let ingresar1 = prompt("ingresa el color");
 const resultado1 = sillas.filter((el) => el.color.includes(ingresar1));
 console.log("De ese color nos quedan : " , resultado1);
 
-
+*/
 /* evento de teclado*/
 window.addEventListener("keydown" , function(e){
 
@@ -292,3 +291,15 @@ console.log ("El telefono del usuario es " , telefono.value);
 })
 
 
+
+/*storage*/
+function cargarStorage() {
+    let storage = JSON.parse(localStorage.getItem("carrito"));
+    if(storage) {
+        alert("tu carrito te espera");
+        carrito = storage;
+        mostrarSillasAgregadas(carrito);
+        localStorage.clear();
+    }
+    }
+    cargarStorage()

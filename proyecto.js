@@ -93,7 +93,7 @@ Funciones
 */
 function mostrarSillas() {
 
-    sillas.forEach(function (silla) {
+    for (let silla of sillas) {
             const divSilla = document.createElement("div");
             divSilla.classList.add("estilo");
 
@@ -139,7 +139,7 @@ localStorage.setItem("carrito" , arreglo_JSON);
             contenedorSillas.appendChild(divSilla);
         }
 
-    )
+    
 
 }
 

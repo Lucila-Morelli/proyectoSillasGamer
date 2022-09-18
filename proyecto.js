@@ -1,5 +1,3 @@
-
-
 /*
 Variables
 */
@@ -10,6 +8,7 @@ const sillas = [{
         precio: 55000,
         marca: "Daewoo",
         color: "azul",
+        cantidad:"4"
     },
     {
         id: 2,
@@ -18,6 +17,7 @@ const sillas = [{
         precio: 55000,
         marca: "The Game House",
         color: "azul",
+        cantidad:"20"
     },
     {
         id: 3,
@@ -26,6 +26,7 @@ const sillas = [{
         precio: 58000,
         marca: "Daewoo",
         color: "rojo",
+        cantidad:"34"
     },
     {
         id: 4,
@@ -34,6 +35,7 @@ const sillas = [{
         precio: 48999,
         marca: "Daewoo",
         color: "rojo",
+        cantidad:"46"
     },
     {
         id: 5,
@@ -42,6 +44,7 @@ const sillas = [{
         precio: 69999,
         marca: "Xtreike",
         color: "rojo",
+        cantidad:"50"
     },
     {
         id: 6,
@@ -50,6 +53,7 @@ const sillas = [{
         precio: 58000,
         marca: "Daewoo",
         color: "verde",
+        cantidad:"10"
     },
     {
         id: 7,
@@ -58,6 +62,7 @@ const sillas = [{
         precio: 61400,
         marca: "Daewoo",
         color: "verde",
+        cantidad:"14"
     },
     {
         id: 8,
@@ -66,6 +71,7 @@ const sillas = [{
         precio: 58000,
         marca: "The Game House",
         color: "negra",
+        cantidad:"22"
     },
 
 ]
@@ -80,7 +86,7 @@ console.log(carrito);
 
 Eventos
 */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     mostrarSillas();
 
@@ -94,53 +100,66 @@ Funciones
 function mostrarSillas() {
 
     for (let silla of sillas) {
-            const divSilla = document.createElement("div");
-            divSilla.classList.add("estilo");
+        const divSilla = document.createElement("div");
+        divSilla.classList.add("estilo");
 
 
-            const imagenSilla = document.createElement("img");
-            imagenSilla.src = silla.img;
-            imagenSilla.className = "imagenSilla";
+        const imagenSilla = document.createElement("img");
+        imagenSilla.src = silla.img;
+        imagenSilla.className = "imagenSilla";
 
 
-            const tituloSilla = document.createElement("h2");
-            tituloSilla.textContent = silla.nombre;
-const parrafoSilla = document.createElement("h3");
-parrafoSilla.textContent = silla.precio;
+        const tituloSilla = document.createElement("h2");
+        tituloSilla.textContent = silla.nombre;
+        const parrafoSilla = document.createElement("h3");
+        parrafoSilla.textContent = silla.precio;
 
-            const btnFavorito = document.createElement("button");
-            btnFavorito.textContent = "Agregar al carrito";
-            btnFavorito.classList.add("boton");
+        const btnFavorito = document.createElement("button");
+        btnFavorito.textContent = "Agregar al carrito";
+        btnFavorito.classList.add("boton");
 
-            /*
-            Evento al boton
-            */
-            btnFavorito.onclick = function () {
-                agregarCarrito(silla.id);
-                let arreglo_JSON = JSON.stringify(carrito);
-localStorage.setItem("carrito" , arreglo_JSON);
-JSON.parse(localStorage.getItem("carrito"))|| [];
+        /*
+        Evento al boton
+        */
+        btnFavorito.onclick = function () {
+            agregarCarrito(silla.id);
+            let arreglo_JSON = JSON.stringify(carrito);
+            localStorage.setItem("carrito", arreglo_JSON);
+            JSON.parse(localStorage.getItem("carrito")) || [];
+           
+           /*Toastify cada vez que se agrega una silla */
+            Toastify({
 
-            }
+                text: "Se agrego correctamente",
+                duration: 500,
+                gravity: "left",
+                style: {
+                    fontSyze: "22px",
+                    background: "linear-gradient(#296285, #7f858a) ",
+                    color: "#f5f2f0",
+                }
 
-            console.log(localStorage.length);
-
-            /*
-            Elementos al card 
-            */
-            divSilla.appendChild(imagenSilla);
-            divSilla.appendChild(tituloSilla);
-            divSilla.appendChild(parrafoSilla);
-            divSilla.appendChild(btnFavorito);
-          
-
-            /*
-            Dom
-            */
-            contenedorSillas.appendChild(divSilla);
+            }).showToast();
         }
 
-    
+        console.log(localStorage.length);
+
+        /*
+        Elementos al card 
+        */
+        divSilla.appendChild(imagenSilla);
+        divSilla.appendChild(tituloSilla);
+        divSilla.appendChild(parrafoSilla);
+        divSilla.appendChild(btnFavorito);
+
+
+        /*
+        Dom
+        */
+        contenedorSillas.appendChild(divSilla);
+    }
+
+
 
 }
 
@@ -164,9 +183,9 @@ function agregarCarrito(id) {
 function mostrarSillasAgregadas(agregadas) {
     contenedorAgregadas.innerHTML = "";
     agregadas.forEach(function (silla) {
-          
-        
-        const divSilla = document.createElement("div");
+
+
+            const divSilla = document.createElement("div");
             divSilla.classList.add("estilo");
 
 
@@ -188,59 +207,94 @@ function mostrarSillasAgregadas(agregadas) {
             btn_eliminar.classList.add("borrar");
 
 
+          
+
             suma_productos()
 
             divSilla.appendChild(imagenSilla);
             divSilla.appendChild(parrafoSilla);
             divSilla.appendChild(tituloSilla);
-       divSilla.appendChild(btn_eliminar);
+            divSilla.appendChild(btn_eliminar);
 
             contenedorAgregadas.appendChild(divSilla);
-/*boton borrar*/
+            /*boton borrar*/
 
             let botones_borrar = document.getElementsByClassName("borrar");
-            for(let btn of botones_borrar){
-                btn.addEventListener("click" , eliminar)
+            for (let btn of botones_borrar) {
+                btn.addEventListener("click", eliminar)
             }
         }
 
     )
+
+
+
+}
+/*AIUDAAA*/
+
+const agregarAFavorito = (itemId) => {
+    const sillaAgregada= sillaAgregada.find((prod) => prod.id === itemId)
+
+    if (sillaAgregada) {
+        sillaAgregada.cantidad++
+        console.log("+1 cantidad")
+    } else {
+        const prod = sillas.find((prod) => prod.id === itemId)
+
+        sillaAgregada.push({
+            id: prod.id,
+            nombre: prod.nombre,
+            img: prod.img,
+            cantidad: 1
+        })
+        console.log("Sumado a Favoritos")
+    }
+    mostrarJuegosFavoritos(sillaAgregada)
+
 }
 
-function eliminar (e){
+
+
+
+
+
+
+
+function eliminar(e) {
     let target = e.target.parentNode;
     let nombres = e.target.parentNode.getElementsByTagName("h2");
     target.remove()
-    for(let nombre of nombres){
+    for (let nombre of nombres) {
         carrito = carrito.filter((e) => e.nombre !== nombre.innerText)
         suma_productos();
         return carrito;
-     
-}
-mostrarSillasAgregadas(carrito);
+
+    }
+    mostrarSillasAgregadas(carrito);
 }
 
 
 function suma_productos() {
-let venta_total = carrito.reduce(calcular_total , 0 );
+    let venta_total = carrito.reduce(calcular_total, 0);
     let total = document.getElementById("totalCarrito");
     console.log(total);
     total.innerHTML = `El total a pagar es : ${venta_total}`;
-    
-    }
-    
-    function calcular_total(acu, producto) {
-    
+
+
+}
+
+function calcular_total(acu, producto) {
+
     acu = acu += parseInt(producto.precio);
-    
+
     return acu
-    
-    }
+
+}
 
 
 
 
-    /* FILTER 
+/* FILTER 
 
 const sillasFiltradas = sillas.filter(function(silla){
     return silla.precio < 56000;
@@ -263,13 +317,12 @@ console.log("De ese color nos quedan : " , resultado1);
 
 */
 /* evento de teclado*/
-window.addEventListener("keydown" , function(e){
+window.addEventListener("keydown", function (e) {
 
 
-    if (e.key == "ArrowUp"){
+    if (e.key == "ArrowUp") {
         this.document.body.style.background = "dimgrey";
-    }
-    else if(e.key == "ArrowDown"){
+    } else if (e.key == "ArrowDown") {
         this.document.body.style.background = "rgb(151, 150, 148)";
     }
 });
@@ -278,28 +331,64 @@ window.addEventListener("keydown" , function(e){
 
 
 
-let form =  document.getElementById("form");
+let form = document.getElementById("form");
 
-form.addEventListener("submit" , function(e){
-e.preventDefault();
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-let nombre = document.getElementById("nombre");
-let telefono = document.getElementById("telefono");
+    let nombre = document.getElementById("nombre");
+    let telefono = document.getElementById("telefono");
 
-console.log ("El nombre del usuario es " , nombre.value);
-console.log ("El telefono del usuario es " , telefono.value); 
+    console.log("El nombre del usuario es ", nombre.value);
+    console.log("El telefono del usuario es ", telefono.value);
 })
 
 
 
-/*storage*/
+/*storage  y Sweet alert para*/
 function cargarStorage() {
     let storage = JSON.parse(localStorage.getItem("carrito"));
-    if(storage) {
-        alert("tu carrito te espera");
+    if (storage) {
+        Swal.fire({
+            text: "Tu carrito te esta esperando",
+            title: "Terminar compra",
+            icon: "warning",
+            showClass: {
+                popup: "animate__animated animate__fadeInDown"
+            },
+            hideClass: {
+                popup: "animate__animated animate__fadeOutUp"
+            }
+        });
         carrito = storage;
         mostrarSillasAgregadas(carrito);
         localStorage.clear();
     }
-    }
-    cargarStorage()
+}
+cargarStorage()
+
+
+
+
+
+
+
+const comprar = document.querySelector(".comprar");
+
+function finalizar(){
+    Swal.fire({
+        text: "El envio se realiza dentro de las 48hs.",
+        title:"finalizaste la compra",
+      
+        showClass: {
+            popup: "animate__animated animate__fadeInDown"
+        },
+        hideClass: {
+            popup: "animate__animated animate__fadeOutUp"
+        }
+    });
+
+
+}
+
+

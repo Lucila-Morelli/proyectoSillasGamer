@@ -230,28 +230,6 @@ function mostrarSillasAgregadas(agregadas) {
 
 
 }
-/*AIUDAAA*/
-
-const agregarAFavorito = (itemId) => {
-    const sillaAgregada= sillaAgregada.find((prod) => prod.id === itemId)
-
-    if (sillaAgregada) {
-        sillaAgregada.cantidad++
-        console.log("+1 cantidad")
-    } else {
-        const prod = sillas.find((prod) => prod.id === itemId)
-
-        sillaAgregada.push({
-            id: prod.id,
-            nombre: prod.nombre,
-            img: prod.img,
-            cantidad: 1
-        })
-        console.log("Sumado a Favoritos")
-    }
-    mostrarJuegosFavoritos(sillaAgregada)
-
-}
 
 
 
@@ -392,3 +370,27 @@ function finalizar(){
 }
 
 
+
+
+/*AIUDAAA, Quiero que cuando cargo en el carrito dos sillas iguales sume la cantidadx2 o tres y asi...pero no logre hacerlo
+
+contenedorAgregadas = (Id) => {
+    const sillaAgregada= sillaAgregada.find((silla) => silla.id === Id)
+
+    if (sillaAgregada) {
+        sillaAgregada.cantidad++
+        console.log("+1 cantidad")
+    } else {
+        const prod = sillas.find((silla) => silla.id === Id)
+
+        sillaAgregada.push({
+            id: silla.id,
+            nombre: silla.nombre,
+            img: silla.img,
+            cantidad: 1
+        })
+    
+    }
+ contenedorAgregadas(sillaAgregada)
+}
+*/

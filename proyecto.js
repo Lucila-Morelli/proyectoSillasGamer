@@ -394,3 +394,17 @@ contenedorAgregadas = (Id) => {
  contenedorAgregadas(sillaAgregada)
 }
 */
+
+
+
+let contenedor = document.getElementById("clima")
+let ciudad = "Buenos Aires"
+
+
+fetch("https://api.openweathermap.org/data/2.5/weather?q=" + ciudad +"&units=metric&appid=e78b917eef6d58e69081cc66b32771ea")
+.then(response=> response.json())
+.then(data => 
+    {
+        contenedor.innerHTML = ` <span> Ciudad: ${data.name}</span>
+                                 <span> Temp: ${data.main.temp}  </span>  `  
+    })

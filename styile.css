@@ -1,45 +1,45 @@
 *{
-    margin: 5px;
-    padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: border-box;
+  margin: 5px;
+  padding: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
 
 
 
 header {
-    background-color: #064052;
-    height: auto;
-  }
-  
-  .nav-link {
-    font-weight: 500;
-    font-size: 20px;
-    color: white;
-  }
-  
+  background-color: #064052;
+  height: auto;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+
 
 
 .navbar-brand {
-  width: auto;
-  height: 70px;
-  border: 2px solid rgb(255, 254, 254);
-  border-radius: 70%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
- color: rgb(17, 13, 11);
- background-color: white;
- font-weight: bolder;
+width: auto;
+height: 70px;
+border: 2px solid rgb(255, 254, 254);
+border-radius: 70%;
+text-align: center;
+display: flex;
+align-items: center;
+font-size: 15px;
+color: rgb(17, 13, 11);
+background-color: white;
+font-weight: bolder;
 
 }
 
 h1{
-  color: black;
-  font-size: 25px;
-  text-align: center;
-  font-weight: bold;
+color: black;
+font-size: 25px;
+text-align: center;
+font-weight: bold;
 }
 
 .containerGaleria {
@@ -47,135 +47,135 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-evenly;
-    transition: all 300ms;
+  transition: all 300ms;
 }
 
 
 
 h2 {
-    font-size: 15px;
-    color: rgb(17, 13, 11);
-    font-weight: bold;
-    text-align: center;
+  font-size: 15px;
+  color: rgb(17, 13, 11);
+  font-weight: bold;
+  text-align: center;
 }
 
 
 .estilo{
-  margin-bottom: 2rem;
-  text-align: center;
-  border: 1px solid white;
-  border-radius: 10px;
-  color: white;
-  overflow: hidden;
+margin-bottom: 2rem;
+text-align: center;
+border: 1px solid white;
+border-radius: 10px;
+color: white;
+overflow: hidden;
 }
 
 .imagenSilla { 
-  height: 200px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.boton{ 
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
-#contenedorSillas{
-  margin-top: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-
-.imagenSilla{
-  height: 200px;
+height: 200px;
   object-fit: cover;
   object-position: center;
 }
 
+.boton{ 
+display: inline-block;
+padding: 0.5rem 1rem;
+margin: 1rem 0;
+border-radius: 10px;
+outline: none;
+border: none;
+cursor: pointer;
+}
+
+#contenedorSillas{
+margin-top: 1rem;
+display: grid;
+gap: 1rem;
+grid-template-columns: repeat(4, 1fr);
+}
+
+
+.imagenSilla{
+height: 200px;
+object-fit: cover;
+object-position: center;
+}
+
 
 .boton{
-  display: inline-block;
-  border-radius: 10px;
-  background-color: darkslategray;
-  color: black;
+display: inline-block;
+border-radius: 10px;
+background-color: darkslategray;
+color: black;
 }
 
 
 .boton:hover {
-  background-color: blue;
-  color: white;
+background-color: blue;
+color: white;
 } 
 
 
 .footer{
-  text-align: center;
-  background-color: #064052;
+text-align: center;
+background-color: #064052;
 
-  color: antiquewhite;
-  font-weight: 25px;
+color: antiquewhite;
+font-weight: 25px;
 }
 
 #contenedorAgregadas{
-  display: grid;
+display: grid;
 gap: 1rem;
 grid-template-columns: repeat(4, 1fr);
 
 }
 
 h3{
-  color: black;
-  font-size: 12px;
+color: black;
+font-size: 12px;
 }
 
 
 .imagenPortada{
-  width: 100%;
+width: 100%;
 }
 
 .parrafo{
 
-  font-weight: bold;
-  font-size: 20px;
-  margin: 18px;
+font-weight: bold;
+font-size: 20px;
+margin: 18px;
 }
 
 
 h5{
 
-  color: navy;
-  font-weight: bold;
-  text-align: center;
+color: navy;
+font-weight: bold;
+text-align: center;
 }
 
 .borrar {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
- 
-  background-color: darkslategray;
-  color: black;
+display: inline-block;
+padding: 0.5rem 1rem;
+margin: 1rem 0;
+border-radius: 10px;
+outline: none;
+border: none;
+cursor: pointer;
+
+background-color: darkslategray;
+color: black;
 }
 
 
 .borrar:hover {
-  background-color: blue;
-  color: white;
+background-color: blue;
+color: white;
 } 
 
 input{
-  border: solid black;
-  margin: 6px;
+border: solid black;
+margin: 6px;
 background-color: rgb(226, 240, 240);
 display: flex;
 flex-direction: column;
@@ -183,37 +183,39 @@ margin: 18px;
 }
 
 .parrafo1{
-  margin: 18px;
-  font-size: 15px;
-  font-weight: bold;
+margin: 18px;
+font-size: 15px;
+font-weight: bold;
 }
 .enviar{
-  border-radius: 10px;
-  background-color: black;
-  color: antiquewhite;
-  margin: 18px;
+border-radius: 10px;
+background-color: black;
+color: antiquewhite;
+margin: 18px;
 
 }
 
 .enviar:hover{
-  background-color: antiquewhite;
-  color: black;
+background-color: antiquewhite;
+color: black;
 
 }
 
 .comprar{
-  padding: 8px;
-  cursor: pointer;
-  background-color: blue;
-  color: aliceblue;
-  margin-left: 622px;
+padding: 8px;
+cursor: pointer;
+background-color: blue;
+color: aliceblue;
+margin-left: 622px;
 }
 
 .comprar:hover{
-  background-color: mediumslateblue;
-  color: black;
- 
+background-color: mediumslateblue;
+color: black;
+
 }
 
-
+.cantidadSilla {
+color: black;
+}
 

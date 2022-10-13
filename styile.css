@@ -219,29 +219,3 @@ color: black;
 color: black;
 }
 
-
-/*no logre hacerlo responsive*/
-@media(max-width:1024px){
-  
-  .contenedorSillas{
-    display:grid;
-    grid-template-columns: (1fr);
-    grid-area: auto;
-  }
-
-  .comprar{
-   color: rgb(201, 199, 204);
-   background-color: rgb(17, 13, 11);
- margin-left: 14px;
-  }
-
-
-
-  .estilo{
-    text-align: center;
-    border: 1px solid white;
-  
-    color: white;
-   
-    }
-}

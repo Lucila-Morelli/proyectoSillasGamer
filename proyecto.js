@@ -283,9 +283,10 @@ form.addEventListener("submit", function (e) {
 
   let nombre = document.getElementById("nombre");
   let telefono = document.getElementById("telefono");
-
+  let email= document.getElementById("email");
   console.log("El nombre del usuario es ", nombre.value);
   console.log("El telefono del usuario es ", telefono.value);
+  console.log("El email del usuario es ", email.value);
 });
 
 /*storage  y Sweet alert para*/
